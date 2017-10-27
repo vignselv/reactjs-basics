@@ -32,13 +32,7 @@ build:
     - script:
       name: deploy to firebase
       code: |
-        firebase deploy --project testing-9d045
-  after-steps:
-    - slack-notifier:
-        url: https://testing-9d045.firebaseio.com/
-
-        channel: portfolio-website
-        username: Deploy Bot
+        firebase deploy --project $FIREBASE_PROJECT_NAME --token $FIREBASE_TOKEN
    
 
     # A custom script step, name value is used in the UI
